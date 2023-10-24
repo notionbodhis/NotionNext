@@ -9,40 +9,38 @@ import { formatDateFmt } from '@/lib/formatDate'
 // import Image from 'next/image'
 
 const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
-  const showPreview = CONFIG.POST_LIST_PREVIEW && post.blockMap;
+  const showPreview = CONFIG.POST_LIST_PREVIEW && post.blockMap
   // matery 主题默认强制显示图片
   if (post && !post.pageCoverThumbnail) {
-    post.pageCoverThumbnail = siteInfo?.pageCover;
+    post.pageCoverThumbnail = siteInfo?.pageCover
   }
-  const showPageCover = CONFIG.POST_LIST_COVER && post?.pageCoverThumbnail;
-  const delay = (index % 3) * 300;
-
+  const showPageCover = CONFIG.POST_LIST_COVER && post?.pageCoverThumbnail
+  const delay = (index % 3) * 300
   return (
-    <div
-      data-aos="zoom-in"
-      data-aos-duration="500"
-      data-aos-delay={delay}
-      data-aos-once="true"
-      data-aos-anchor-placement="top-bottom"
-      className="w-full mb-4 overflow-hidden shadow-md border dark:border-black rounded-xl bg-white dark:bg-hexo-black-gray"
-    >
-      {/* 固定高度 ，空白用图片拉升填充 */}
-      <div className="group flex flex-col h-80 justify-between">
-        {/* 头部图片 填充卡片 */}
-        {showPageCover && (
-          <Link to={`${BLOG.SUB_PATH}/${post.slug}`}>
-            <div className="flex flex-grow w-full relative duration-200 rounded-t-md">
-              <LazyImage
-                src={post?.pageCoverThumbnail}
-                alt={post.title}
-                className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover"
-              />
-              <div className="absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text">
-                {post.title}
-              </div>
-            </div>
-          </Link>
-        )}
+        <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay={delay}
+            data-aos-once="true"
+            data-aos-anchor-placement="top-bottom"
+            className="w-full mb-4 overflow-hidden shadow-md border dark:border-black rounded-xl bg-white dark:bg-hexo-black-gray">
+
+            {/* 固定高度 ，空白用图片拉升填充 */}
+            <div className="group flex flex-col h-80 justify-between">
+
+                {/* 头部图片 填充卡片 */}
+                {showPageCover && (
+                    <Link href={`${BLOG.SUB_PATH}/${post.slug}`} passHref legacyBehavior>
+                        <div className="flex flex-grow w-full relative duration-200 = rounded-t-md cursor-pointer transform overflow-hidden">
+                            <LazyImage
+                                src={post?.pageCoverThumbnail}
+                                alt={post.title}
+                                className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover duration-500"
+                            />
+                            <div className='absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text'>{post.title}</div>
+                        </div>
+                    </Link>
+                )}
 
                 {/* 文字描述 */}
                 <div >
