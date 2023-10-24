@@ -36,7 +36,6 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                                 src={post?.pageCoverThumbnail}
                                 alt={post.title}
                                 className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover duration-500"
-                                style={{ aspectRatio: '16/9' }}
                             />
                             <div className='absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text'>{post.title}</div>
                         </div>
