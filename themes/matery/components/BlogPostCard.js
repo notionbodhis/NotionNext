@@ -31,11 +31,11 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         {/* 头部图片 填充卡片 */}
         {showPageCover && (
           <Link to={`${BLOG.SUB_PATH}/${post.slug}`}>
-            <div className="flex flex-grow w-full relative duration-200 rounded-t-md cursor-pointer transform overflow-hidden">
+            <div className="flex flex-grow w-full relative duration-200 rounded-t-md">
               <LazyImage
                 src={post?.pageCoverThumbnail}
                 alt={post.title}
-                className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover duration-500"
+                className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover"
               />
               <div className="absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text">
                 {post.title}
