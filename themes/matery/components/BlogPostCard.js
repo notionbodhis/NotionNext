@@ -35,7 +35,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                             <LazyImage
                                 src={post?.pageCoverThumbnail}
                                 alt={post.title}
-                                className="image w-full h-64 group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover duration-500"
+                                className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover duration-500"
                             />
                             <div className='absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text'>{post.title}</div>
                         </div>
