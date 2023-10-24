@@ -26,7 +26,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
             className="w-full mb-4 overflow-hidden shadow-md border dark:border-black rounded-xl bg-white dark:bg-hexo-black-gray">
 
             {/* 固定高度 ，空白用图片拉升填充 */}
-            <div className="group flex flex-col h-80 justify-between">
+            <div className="group flex flex-col h-100 justify-between">
 
                 {/* 头部图片 填充卡片 */}
                 {showPageCover && (
